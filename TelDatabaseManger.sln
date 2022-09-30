@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelDatabaseManger", "Tel_DatabaseManger\TelDatabaseManger.csproj", "{1AAD6E14-299A-48EE-AD75-06B05F52A545}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AAD6E14-299A-48EE-AD75-06B05F52A545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AAD6E14-299A-48EE-AD75-06B05F52A545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AAD6E14-299A-48EE-AD75-06B05F52A545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AAD6E14-299A-48EE-AD75-06B05F52A545}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81F89FD1-0DC3-4C12-B275-FA149C5D0666}
+	EndGlobalSection
+EndGlobal

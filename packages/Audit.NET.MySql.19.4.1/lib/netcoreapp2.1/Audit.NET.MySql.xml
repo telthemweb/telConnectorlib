@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Audit.NET.MySql</name>
+    </assembly>
+    <members>
+        <member name="T:Audit.MySql.Configuration.IMySqlServerProviderConfigurator">
+            <summary>
+            Provides a configuration for the MySql Server DB data provider
+            </summary>
+        </member>
+        <member name="M:Audit.MySql.Configuration.IMySqlServerProviderConfigurator.ConnectionString(System.String)">
+            <summary>
+            Specifies the MySQL connection string.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+        </member>
+        <member name="M:Audit.MySql.Configuration.IMySqlServerProviderConfigurator.TableName(System.String)">
+            <summary>
+            Specifies the MySQL Table Name.
+            </summary>
+            <param name="tableName">The table name.</param>
+        </member>
+        <member name="M:Audit.MySql.Configuration.IMySqlServerProviderConfigurator.IdColumnName(System.String)">
+            <summary>
+            Specifies the column that is the Primary Key (or unique key)
+            </summary>
+            <param name="idColumnName">The id column name.</param>
+        </member>
+        <member name="M:Audit.MySql.Configuration.IMySqlServerProviderConfigurator.JsonColumnName(System.String)">
+            <summary>
+            Specifies the column where to store the event json data
+            </summary>
+            <param name="jsonColumnName">The json data column name.</param>
+        </member>
+        <member name="M:Audit.MySql.Configuration.IMySqlServerProviderConfigurator.CustomColumn(System.String,System.Func{Audit.Core.AuditEvent,System.Object})">
+            <summary>
+            Specifies an extra custom column on the audit log table and the value as a function of the audit event 
+            </summary>
+            <param name="columnName">The column name</param>
+            <param name="value">A function of the audit event that returns the value to insert/update on this column</param>
+        </member>
+        <member name="T:Audit.MySql.Providers.MySqlDataProvider">
+            <summary>
+            MySQL Server data access
+            </summary>
+            <remarks>
+            Settings:
+            - ConnectionString: MySQL connection string
+            - TableName: Table name (default is 'event')
+            - JsonColumnName: Column name where the JSON will be stored (default is 'data')
+            - IdColumnName: Column name with the primary key (default is 'id')
+            </remarks>
+        </member>
+        <member name="P:Audit.MySql.Providers.MySqlDataProvider.ConnectionString">
+            <summary>
+            The MySQL connection string
+            </summary>
+        </member>
+        <member name="P:Audit.MySql.Providers.MySqlDataProvider.TableName">
+            <summary>
+            The MySQL events Table Name
+            </summary>
+        </member>
+        <member name="P:Audit.MySql.Providers.MySqlDataProvider.JsonColumnName">
+            <summary>
+            The Column Name that stores the JSON
+            </summary>
+        </member>
+        <member name="P:Audit.MySql.Providers.MySqlDataProvider.IdColumnName">
+            <summary>
+            The Column Name that is the primary ley
+            </summary>
+        </member>
+        <member name="P:Audit.MySql.Providers.MySqlDataProvider.CustomColumns">
+            <summary>
+            A collection of custom columns to be added when saving the audit event 
+            </summary>
+        </member>
+        <member name="M:Audit.Core.MySqlServerConfiguratorExtensions.UseMySql(Audit.Core.ConfigurationApi.IConfigurator,System.String,System.String,System.String,System.String,System.Collections.Generic.List{Audit.NET.MySql.CustomColumn})">
+            <summary>
+            Store the events in a MySQL database.
+            </summary>
+            <param name="configurator">The configurator object.</param>
+            <param name="connectionString">The MySQL connection string.</param>
+            <param name="tableName">The MySQL table name to store the events.</param>
+            <param name="idColumnName">The primary key column name.</param>
+            <param name="jsonColumnName">The column name where to store the json data.</param>
+            <param name="customColumns">The extra custom columns.</param>
+        </member>
+        <member name="M:Audit.Core.MySqlServerConfiguratorExtensions.UseMySql(Audit.Core.ConfigurationApi.IConfigurator,System.Action{Audit.MySql.Configuration.IMySqlServerProviderConfigurator})">
+            <summary>
+            Store the events in a MySQL database.
+            </summary>
+            <param name="configurator">The configurator object.</param>
+            <param name="config">The MySQL provider configuration.</param>
+        </member>
+        <member name="T:Audit.NET.MySql.CustomColumn">
+            <summary>
+            Represents a custom column on the audit table
+            </summary>
+        </member>
+    </members>
+</doc>
